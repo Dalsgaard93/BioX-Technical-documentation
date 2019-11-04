@@ -1,0 +1,77 @@
+\chapter{Introduction}
+
+\section{Background for present study}
+
+How can musculoskeletal models be combined with inertial measurement units to utilize in-depth analysis of running and what kind of estimations can the AnyBody Modeling System contribute with? To what extend is it possible to use field-based measurements as input to muskuloskeletal models outside laboratory settings without equipment as motion capture systems and force plates? In the present study, running is investigated as a potential research area combining Polar equipment and AnyBody muskuloskeletal models. The AnyBody Modeling System has many practical applications in sports and ergonomics with potential to be a useful tool in other sport activities to optimise performance and/or technique. 
+    
+\section{IMUs}
+Inertial measurement units are a miniature sensor system that typically consist of a combination of triaxial sensors, such as accelerometers, gyroscopes or magnetometers. These systems can easily be attached to the human body in order to capture objective measurements \parencite{Shany2012}. In the present study, Polar (Polar BS01, $\pm$ $16g$) IMUs are used to measure triaxial accelerations, see figure \ref{fig:imu}. As these systems gain more and more accuracy and reliability, they become even more popular for analysing human movement and other dynamic systems. In table \ref{tab:IMUtable}, a list of studies from the literature using inertial measurement units to investigate running are shown. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.7\linewidth]{figures/IMU.jpg}
+    \caption{Picture of Polar BS01 IMU.}
+    \label{fig:imu}
+\end{figure}
+
+
+\begin{table}[h!]
+\caption{List of studies using IMUs.}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\textbf{Reference} & \textbf{\begin{tabular}[c]{@{}l@{}}Participants \\ (age,  height, weight)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}IMUs (\\ Type, \\ Sampling frequency,\\ Range)\end{tabular}} & \textbf{Placement of IMUs} & \textbf{\begin{tabular}[c]{@{}l@{}}Filtering (\\ Type,\\ Order,\\ cutoff)\end{tabular}} & \textbf{Time/steps} & \textbf{\begin{tabular}[c]{@{}l@{}}Running details (\\ Condition,\\ speed)\end{tabular}} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Lindsay, \\ 2014\end{tabular} & \begin{tabular}[c]{@{}l@{}}18 healthy, active, college-age males (\\ 24.0 ± 4.2,\\ 1.78 ± 0.07,\\ 79.7 ± 14.8)\end{tabular} & \begin{tabular}[c]{@{}l@{}}One triaxial accelerometer (\\ G-Link ADXL 210, \\ 617Hz, \\ ± 10g)\end{tabular} & L4/L5 & \begin{tabular}[c]{@{}l@{}}Butterworth (\\ LP, \\ 4th order, \\ 10Hz)\end{tabular} & 60s & \begin{tabular}[c]{@{}l@{}}Treadmill running \\ (three speeds; 2.22, 2.78, 3.33 m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Karatsidis,\\ 2018\end{tabular} & \begin{tabular}[c]{@{}l@{}}11 healthy males (\\ 31 ± 7.2,\\ 1.81 ± 0.06,\\ 77.3 ± 9.2)\end{tabular} & \begin{tabular}[c]{@{}l@{}}17 IMUs (\\ Xsens MVN Link,\\ 240Hz, \\ ± 10g)\end{tabular} & Full body &  & 5 trials & \begin{tabular}[c]{@{}l@{}}Overground walking \\ (three speeds; 1.28 ± 0.14, 1.58 ± 0.09, 0.86 ± 0.11\\   m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Thompson,\\ 2016\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 healthy, physically active shod runners,\\ 5 females/5males (\\ 26 ± 7.3,\\ 1.74 ± 0.09,\\ 65.6 ± 10.2)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Two accelerometers (\\ Freescale Semiconductor MMA3202KEG,\\ 1000Hz,\\ ± 50g)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Distal end of tibia\\ Forehead\end{tabular} &  & 10 strides & \begin{tabular}[c]{@{}l@{}}Overground running \\ (three conditions; BF, BFHS, S)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Mitscheke,\\ 2018\end{tabular} & \begin{tabular}[c]{@{}l@{}}21 recreational male heel strike runners (\\ 24.4 ± 4.2,\\ 1.78 ± 0.04,\\ 74.1 ± 6.5)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Combination of one biaxial accelerometer (\\ Analog Devices ADXL278, \\ 1000Hz,\\ ±70g) \\ and biaxial gyroscope (\\ InvenSense IDG-650, \\ 1000Hz, \\ ± 2000 deg/s), \\ \\ one uniaxial accelerometer (\\ Analog Devices ADXL78, \\ 1000 Hz, \\ ± 70g)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Heel cup\\ Medial aspect of tibia\end{tabular} & \begin{tabular}[c]{@{}l@{}}Butterworth (\\ LP, \\ 4th order, \\ 200Hz /\\ gyro: 50Hz)\end{tabular} & 5 trials & \begin{tabular}[c]{@{}l@{}}15m overground running \\ (Self-selected running speed, avg 3.6 ± 0.4\\   m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Lucas-Cuevas,\\ 2016\end{tabular} & \begin{tabular}[c]{@{}l@{}}30 male runners (\\ 27.3 ± 6.4,\\ 1.75 ± 0.06,\\ 69.9 ± 9.2)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Three triaxial accelerometers (\\ AcelSystem, \\ 300Hz, \\ ± 16g)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Forehead, \\ Proximal/\\ Distal end of tibia\end{tabular} & \begin{tabular}[c]{@{}l@{}}Butterworth (\\ LP, \\ 2nd order, \\ 50Hz)\end{tabular} & 15s & \begin{tabular}[c]{@{}l@{}}Treadmill running \\ (three speeds; 2.22, 2.78, 3.33 m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Sheerin,\\ 2018\end{tabular} & \begin{tabular}[c]{@{}l@{}}14 male runners (\\ 33.6 ± 11.6,\\ 1.77 ± 0.05,\\ 75.6 ±9.5)\end{tabular} & \begin{tabular}[c]{@{}l@{}}One triaxial accelerometer (\\ IMeasureU, \\ 1000Hz, \\ ± 16g)\end{tabular} & Distal end of tibia & \begin{tabular}[c]{@{}l@{}}Butterworth (\\ LP, \\ 4th order, \\ 60Hz)\end{tabular} & 50s & \begin{tabular}[c]{@{}l@{}}Treadmill running \\ (four speeds; 2.7, 3.0, 3.3 and 3.7 m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Fortune,\\ 2014\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 healthy adults,\\ 6 females/4males (\\ 26,\\ 1.75,\\ 66.4)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Triaxial accelerometers (\\ Custom-built by Mayo clinic, \\ 100Hz, \\ ± 16g)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Waist, thigh\\ tibia and ankle\end{tabular} &  & 8 - 10 trials & \begin{tabular}[c]{@{}l@{}}30m overground walking \\ (range from 0.54 to 2.24 m/s\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Karatsidis,\\ 2017\end{tabular} & \begin{tabular}[c]{@{}l@{}}11 healthy males (\\ 31 ± 7.2,\\ 1.81 ± 0.06,\\ 77.3 ± 9.2)\end{tabular} & \begin{tabular}[c]{@{}l@{}}17 IMUs (\\ Xsens MVN Link, \\ 240Hz, \\ ± 10g)\end{tabular} & Full body & \begin{tabular}[c]{@{}l@{}}Butterworth (\\ LP, \\ 2nd order, \\ 6Hz)\end{tabular} & 5 trials & \begin{tabular}[c]{@{}l@{}}Overground walking \\ (three speeds; 1.28 ± 0.14, 1.58 ± 0.09, 0.86 ± 0.11\\   m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Clermont,\\ 2018\end{tabular} & \begin{tabular}[c]{@{}l@{}}41 runners,\\ 16 females/25 males\end{tabular} & \begin{tabular}[c]{@{}l@{}}One triaxial accelerometer (\\ Shimmer3, \\ 201.03Hz, \\ ± 8g)\end{tabular} & L3/L5 Vertebra & \begin{tabular}[c]{@{}l@{}}Butterworth (LP, \\ 4th order, \\ 20Hz)\end{tabular} & 270s & \begin{tabular}[c]{@{}l@{}}Treadmill running \\ (self-selected running speed, avg 2.7 m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Glauberman,\\ 2014\end{tabular} & 20 female runners & \begin{tabular}[c]{@{}l@{}}One triaxial\\ accelerometer (\\ -,-,-)\end{tabular} & 5cm above the medial malleolus &  & 60s & \begin{tabular}[c]{@{}l@{}}Treadmill running\\ (3.13 m/s)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Oelsner,\\ 2018\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 competitive runners,\\ males\end{tabular} & \begin{tabular}[c]{@{}l@{}}One activity monitor\\ triaxial accelerometer (\\ (ADXL345,\\ 50 Hz, \\ ± 8g)\end{tabular} & lateral right iliac crest &  &  & Track training sessions \\ \hline
+\begin{tabular}[c]{@{}l@{}}Reenalda,\\ 2019\end{tabular} & 10 well-trained male runners & \begin{tabular}[c]{@{}l@{}}8 IMUs (\\ Xsens, \\ 100Hz, \\ ± 18g)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Foot, Shank\\ Thigh, Sacrum\\ Sternum\end{tabular} & \begin{tabular}[c]{@{}l@{}}Kalman\\ filter\end{tabular} & 20 strides & \begin{tabular}[c]{@{}l@{}}Prolonged 20-min run on\\ athletic track\end{tabular} \\ \hline
+\end{tabular}}%
+\label{tab:IMUtable}
+\end{table}
+\newpage
+
+\section{The AnyBody Modeling System}
+    A modeling system for working with musculoskeletal models that is designed to fulfill following: 1) The AnyBody Modeling System should be a tool that permits users to make models on their own or modify predefined models to fit different purposes. 2) The AnyBody Modeling System should facilitate sharing and development of a model with several contributors, including that the system allows the models to be scrutinized. 3) The AnyBody Modeling System must have appropriate numerical efficiency to investigate ergonomic design optimization on normal computers. 4) The complexity of the AnyBody body models should be appropriate to make simulations realistic and meaningful \parencite{Damsgaard2006}. 
+    
+    \vspace{.5cm}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Photos/Examples.PNG}
+        \caption{Musculoskeletal models of different exercises in the AnyBody Modeling System}
+        \label{fig:exampleAnyBody}
+    \end{figure}
+    \vspace{.5cm}
+    
+    When the AnyBody Modeling System is installed and opened for the first time, the AnyBody Assistant will appear. Built-in the AnyBody assistant is a demo that contains instructions to install the AnyBody Model Repository locally on the computer. The AnyBody Managed Model Repository consists of a library of predefined musculoskeletal models with different movements and applications \parencite{Lund2018}. Some applications are shown in figure \ref{fig:exampleAnyBody}. 
+    
+    \vspace{.5cm}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1.0\linewidth]{Photos/Interface.PNG}
+        \caption{Interface in the AnyBody Modeling System version 7.1}
+        \label{fig:interface}
+    \end{figure}
+    \vspace{.5cm}
+    
+    The first step in the AnyBody Modeling System is to load the model with the F5 command or by using the load botton in the tool bar, which also contains commands like run/reset operation, replays etc. When the model is loaded, it can be modified in the different sub-folders to fit the specific purpose. In general, the AnyBody Modeling System or AnyScript is a text-based programming language and in figure \ref{fig:interface} the AnyScript is centered in the middle. In the left side, the model tree is shown with the different folders, in the bottom of the screen is the message window to track progress of the operations and the model is visible on the right side. 
+
+    \subsection{Statistical running model}
+        Commonly, the AnyBody Modeling System requires kinematic motion capture- and kinetic force plate data as experimental input to musculoskeletal models. Especially if the purpose is to generate realistic models of human running, kinematic data from motion capture is needed. In cooperation with Kaiser Sport \& Orthopaedics, motion capture measurements from 150+ running trials have been gathered to form the basis of the running model. All those c3d.files have been processed in the AnyBody Modeling System, resulting in anthropometric data and anatomical joint angle variations for each running cycle. Even though running characteristics seems to be quite complex, the movement pattern is cyclic of nature. Therefore, the running cycles can be approximated by Fourier series coefficients that can be described by a limited amount of terms. All the joint angle movements are now represented as coefficients \parencite{Rasmussen2019}. The Fourier series coefficients can now form the part of principal component analysis (PCA) that reduces the dimensionality by disregarding the components with least variance, and PCA also locates the directions with highest variance. The principal components are uncorrelated and each can be varied independently \parencite{Holland2016, Moeslund2001}. Making the PCA, the principal components are the parameters of the running model that can be varied independently and create realistic running styles. 
+    
+    \subsection{Model scaling and muscle recruitment}
+        The data from motion capture systems is processed into subject-specific AnyBody models where model parameters as marker location and segment length are identified. The optimization-based method is described by Andersen et al. and scales the segment length and marker position \parencite{Andersen2010a}. This is a very computational efficient method for parameter identification used for movement analysis. The muscle recruitment problem occurs performing inverse dynamics and is also described as an optimization problem. The human body has more muscles than necessary to drive the degrees of fredom, corresponding to infinite many muscle recruitment patterns. Assuming an optimality criteria, the load is distributed relatively even and minimized between the different muscles \parencite{Damsgaard2006}. 
+    
+    \subsection{Prediction of ground reaction force and moments}
+        A dynamic contact model is created to predict ground reaction force and moments and is initially validated for activities of daily living. The model is able to estimate and distribute ground reaction force and moments under both feet. In general, the method is universal and only requires kinematic data and scaled models \parencite{Fluit2014}. An adopted version of the model is later validated and used in sports-related movements where the model is tested against a wider range with higher accelerations and forces compared to activities of daily living. Measurements with force plates are quite limited to sports laboratories and the space available is therefore restricted to the size of the laboratory. Prediction of ground reaction force and moments enables measurements performed on treadmills, outside laboratory settings in outdoor environment, more complex movement patterns and other contact conditions where it is not necessary to incorporate force plates \parencite{Skals2017}. Regarding predictive models, it is possible to use prediction of ground reaction force and moments using only a limited amount of kinematic input and could be from inertial measurement units. Using prediction of ground reaction force and moments and adding muscles to the AnyBody running model, investigation of different running styles can be done \parencite{Rasmussen2019}. In case of the most common running-related injuries as medial tibial stress syndrome, patellofemoral pain, achilles tendinopathy and plantar fasciitis \parencite{Bredeweg2014, Lopes2012}, investigations could focus on minimising the loads on the specific body parts that are prone to injuries. 
+
+
+
+

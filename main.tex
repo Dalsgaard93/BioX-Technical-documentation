@@ -1,0 +1,45 @@
+
+\input{setup/preamble.tex}% package inclusion and set up of the document
+\input{setup/hyphenations.tex}% 
+\input{setup/macros.tex}% my new macros
+
+\begin{document}
+%frontmatter
+\pagestyle{empty} %disable headers and footers
+\pagenumbering{roman} %use roman page numbering in the frontmatter
+%\input{sections/Abstract.tex}
+%\input{setup/titlepage.tex}
+\input{setup/nytitle.tex}
+%\cleardoublepage
+%\input{sections/colophon.tex}
+
+%\clearpage
+\pdfbookmark[0]{Contents}{label:contents}
+\pagestyle{fancy} %enable headers and footers again
+\renewcommand{\appendixname}{Appendix}
+% Change Table of Contents title
+\renewcommand{\contentsname}{Contents}
+\tableofcontents
+%\afterpage{\blankpage}
+%\listoftodos
+\newpage
+%\input{setup/preface.tex}
+%\cleardoublepage
+%\input{sections/begrebsafklaring.tex}
+%\cleardoublepage
+%mainmatter
+\pagenumbering{arabic} %use arabic page numbering in the mainmatter
+\input{sections/1_connection.tex}
+\input{sections/2_configure_settings.tex}
+\input{sections/3_calibration.tex}
+\input{sections/4_data_recording.tex}
+\input{sections/5_testing.tex}
+
+%\printbibliography[heading=bibintoc]
+%\label{bib:Master_thesis}
+
+\renewcommand{\appendixname}{Appendix}
+\appendix
+\input{sections/appAname.tex}
+
+\end{document}
